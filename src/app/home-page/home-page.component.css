@@ -1,0 +1,74 @@
+.logo{
+    position: absolute;
+    overflow: hidden;
+    top: 5%;
+    padding-left: 5%;
+    font-weight:bold;
+    font-size: 180%;
+    color: black;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    z-index: 2;
+}
+.logo i{
+    color: red;
+    font-size: 90%;
+    font-weight: bolder;
+}
+.home{
+    position: relative;
+    margin-top: -5%;
+    /* background-image:url('/assets/homePage2.png'); */
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-position: center;
+}
+.homecontent{
+    padding-top: 20%;
+}
+#home h1{
+
+    text-align: center;
+    font-size: 236%;
+    color: black;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";    
+    z-index: 2;
+}
+#home h3{
+    position: relative;
+    text-align: center;
+    font-size: 226%;
+    color: black;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";    
+    padding-bottom: 3%;
+}
+#home button{
+    position: relative;
+    left: 35%;
+    padding: 10px;
+    text-decoration: none;
+    border: 2px solid red;
+    color: white;
+    font-family:system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    /* letter-spacing: 1px; */
+    font-weight: bold;
+    width: 12%;
+    padding: 0.8%;
+    border-radius: .5rem;
+    padding: .8% 3%;
+    background-color: red;
+    cursor: pointer;
+    font-size: large;
+
+}
+#home .login{
+    margin-right: 5%;
+}
+#home button:hover{
+    /* color: black; */
+    /* box-shadow: 0 0 10px red,0 0 40px red,0 0 10px red,0 0 80px red; */
+    /* border: 0px; */
+    transition: all 0.1s ease;
+
+}

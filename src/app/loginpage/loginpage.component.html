@@ -1,0 +1,98 @@
+<section id="login">
+
+    <div class="loginform">
+        <form id="form" action="" #LogInForm = "ngForm" novalidate (ngSubmit)="LogInForm.form.valid && onLogInUserSubmit()">
+            <div class="loginhead">
+                <h1>Welcome Back! login</h1>
+            </div>
+            <a class="close" (click)="MoveToHome()"><i class="bi bi-x-square-fill"></i></a>
+            <div class="logincontents">
+                <label>Username/E-mail id<b style="color: red;">*</b></label>
+                <input type="email" placeholder="Enter your email id" id="loginusername" name ="email" [(ngModel)]="LogInFormsData.email" #email="ngModel" required email>
+                <div class="validationMessages" *ngIf="this.submit && email.errors?.['required']" class="error">
+                    <i class="bi-exclamation-circle-fill"></i>
+                    <small >Valid Email-ID is required</small>
+                </div>
+                <div class="validationMessages" *ngIf="this.submit && email.errors?.['email']" class="error">
+                    <i class="bi-exclamation-circle-fill"></i>
+                    <small >Valid Email-ID is required</small>
+                </div>
+            </div>
+            <div class="logincontents">
+                <label>Password<b style="color: red;">*</b></label>
+                <input type="password" placeholder="Enter your password" minlength = "6" id="loginpassword" name ="password" [(ngModel)]="LogInFormsData.password" #password="ngModel" required>
+                <div class="validationMessages" *ngIf="this.submit && password.errors?.['required']" class="error">
+                    <i class="bi-exclamation-circle-fill"></i>
+                    <small >Valid Password is required</small>
+                </div>
+                <div class="validationMessages" *ngIf="this.submit && password.errors?.['minlength']" class="error">
+                    <i class="bi-exclamation-circle-fill"></i>
+                    <small >Password should be at least 6 characters</small>
+                </div>
+            </div>
+            <br>
+            <div class="logincontents">
+                <button type="submit" id="loginsubmit" (click)="this.submit=true">LOGIN</button>
+            </div>
+        </form>
+    </div>
+</section>
+
+
+
+
+
+
+
+<section id="login">
+
+    <div class="loginform">
+        <form id="form" action="" #LogInFormA = "ngForm" novalidate (ngSubmit)="LogInFormA.form.valid && onLogInAdminSubmit()">
+            <div class="loginhead">
+                <h1>Hello Admin! login</h1>
+            </div>
+            <a class="close" (click)="MoveToHome()"><i class="bi bi-x-square-fill"></i></a>
+            <div class="logincontents">
+                <label>Username/E-mail id<b style="color: red;">*</b></label>
+                <input type="email" placeholder="Enter your email id" id="loginusername" name ="Aemail" [(ngModel)]="LogInFormadmin.Aemail" #Aemail="ngModel" required email>
+                <div class="validationMessages" *ngIf="this.AdminSubmit && Aemail.errors?.['required']" class="error">
+                    <i class="bi-exclamation-circle-fill"></i>
+                    <small >Valid Email-ID is required</small>
+                </div>
+                <div class="validationMessages" *ngIf="this.AdminSubmit && Aemail.errors?.['email']" class="error">
+                    <i class="bi-exclamation-circle-fill"></i>
+                    <small >Valid Email-ID is required</small>
+                </div>
+            </div>
+            <div class="logincontents">
+                <label>Unique ID<b style="color: red;">*</b></label>
+                <input type="text" placeholder="Enter your Unique id" id="loginusername" maxlength="9" name ="AId" [(ngModel)]="LogInFormadmin.AId" #AId="ngModel" required>
+                <div class="validationMessages" *ngIf="this.AdminSubmit && AId.errors?.['required']" class="error">
+                    <i class="bi-exclamation-circle-fill"></i>
+                    <small >Valid Unique ID is required</small>
+                </div>
+                <div class="validationMessages" *ngIf="this.AdminSubmit && AId.errors?.['maxlength']" class="error">
+                    <i class="bi-exclamation-circle-fill"></i>
+                    <small>{{this.uniqueMessage}}</small>
+                </div>
+            </div>
+            <div class="logincontents">
+                <label>Password<b style="color: red;">*</b></label>
+                <input type="password" placeholder="Enter your password" minlength = "6" id="loginpassword" name ="Apassword" [(ngModel)]="LogInFormadmin.Apassword" #Apassword="ngModel" required>
+                <div class="validationMessages" *ngIf="this.AdminSubmit && Apassword.errors?.['required']" class="error">
+                    <i class="bi-exclamation-circle-fill"></i>
+                    <small >Valid Password is required</small>
+                </div>
+                <div class="validationMessages" *ngIf="this.AdminSubmit && Apassword.errors?.['minlength']" class="error">
+                    <i class="bi-exclamation-circle-fill"></i>
+                    <small >Password should be at least 6 characters</small>
+                </div>
+            </div>
+            <br>
+            <div class="logincontents">
+                <button type="submit" id="loginsubmit" (click)="this.AdminSubmit=true">LOGIN</button>
+            </div>
+        </form>
+    </div>
+</section>
+

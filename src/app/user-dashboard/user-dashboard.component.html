@@ -1,0 +1,128 @@
+<!-- <app-admin-dashboard [datasVisible]="sendDataToAdmin"></app-admin-dashboard> -->
+<h1>Welcome <b style="color: red; text-transform: capitalize;">{{this.user.displayName}}</b>!</h1>
+<section id="signup">
+    <div class="signupform">
+        <form action="" #UserSubmit = "ngForm" novalidate (ngSubmit)="UserSubmit.form.valid && onUserSubmit()">
+            <h2>Book Your Slot!</h2>
+
+
+            <div class="signupcontents">
+                <label>Name<b style="color: red;">*</b></label>
+                <input type="text" placeholder="Enter your name" minlength="3" name="name" id="userName" [(ngModel)]="UserSubmitData.name" #name="ngModel" required>
+
+                <div class="validationMessages" *ngIf="this.submit && name.errors?.['required']" class="error">
+                    <i class="bi-exclamation-circle-fill"></i>
+                    <small >Valid Name is required</small>
+                </div>
+                <div class="validationMessages" *ngIf="this.submit && name.errors?.['minlength']" class="error">
+                    <i class="bi-exclamation-circle-fill"></i>
+                    <small >Name must have minimum 3 letters</small>
+                </div>
+            </div>
+            <div class="signupcontents">
+                <label>Car Model<b style="color: red;">*</b></label>
+                <input type="text" placeholder="Enter your name" name="model" id="userName" [(ngModel)]="UserSubmitData.model" #model="ngModel" required>
+
+                <div class="validationMessages" *ngIf="this.submit && model.errors?.['required']" class="error">
+                    <i class="bi-exclamation-circle-fill"></i>
+                    <small >Valid model is required</small>
+                </div>
+               
+            </div>
+      
+            <div class="signupcontents">
+                <label>Preferred service<b style="color: red;">*</b></label>
+                        <select name="service" id="column" [(ngModel)]="UserSubmitData.service" #service="ngModel" required >
+                            <option value="" disabled selected>Select the type of service</option>
+                            <option >Foam Wash</option>
+                            <option >Normal Wash</option>
+                            <option >Ceramic Coating</option>
+
+                        </select>
+                        <div class="validationMessages" *ngIf="this.submit && service.errors?.['required']" class="error">
+                            <i class="bi-exclamation-circle-fill"></i>
+                            <small >Select a type of service</small>
+                        </div>
+             
+            </div>
+            <div class="signupcontents">
+                <label>Preferred Location<b style="color: red;">*</b></label>
+                        <select name="location" id="column" [(ngModel)]="UserSubmitData.location" #location="ngModel" required >
+                            <option value="" disabled selected>Select the location</option>
+                            <option >Avadi</option>
+                            <option >Guindy</option>
+                            <option >Ambattur</option>
+
+                        </select>
+                        <div class="validationMessages" *ngIf="this.submit && location.errors?.['required']" class="error">
+                            <i class="bi-exclamation-circle-fill"></i>
+                            <small >Select a location</small>
+                        </div>
+             
+            </div>
+            <div class="signupcontents">
+                <label>Preferred Date<b style="color: red;">*</b></label>
+                <input type="date" placeholder="Choose Date" name="date" id="userName" [(ngModel)]="UserSubmitData.date" #date="ngModel" required>
+
+                <div class="validationMessages" *ngIf="this.submit && date.errors?.['required']" class="error">
+                    <i class="bi-exclamation-circle-fill"></i>
+                    <small >Valid date is required</small>
+                </div>
+            </div>
+            <div class="signupcontents">
+                <label>Preferred time<b style="color: red;">*</b></label>
+                        <select name="time" id="column" [(ngModel)]="UserSubmitData.time" #time="ngModel" required >
+                            <option value="" disabled selected>Choose a Time</option>
+                            <option >10 AM to 11 AM</option>
+                            <option >11 AM to 12 PM</option>
+                            <option >01 PM to 02 PM</option>
+                            <option >02 PM to 03 PM</option>
+                            <option >03 PM to 04 PM</option>
+
+                        </select>
+                        <div class="validationMessages" *ngIf="this.submit && time.errors?.['required']" class="error">
+                            <i class="bi-exclamation-circle-fill"></i>
+                            <small >Select a time</small>
+                        </div>
+             
+            </div>
+            <div class="signupcontents">
+                <label>Phone Number<b style="color: red;">*</b></label>
+                <input type="tel" placeholder="Enter your mobile number" id="number" minlength="10" maxlength="10" name="phonenumber" [(ngModel)]="UserSubmitData.phonenumber" #phonenumber="ngModel" required>
+                <div class="validationMessages" *ngIf="this.submit && phonenumber.errors?.['required']" class="error">
+                    <i class="bi-exclamation-circle-fill"></i>
+                    <small >Valid 10 Digit Phone Number is required</small>
+                </div>
+                <div class="validationMessages" *ngIf="this.submit && phonenumber.errors?.['minlength']" class="error">
+                    <i class="bi-exclamation-circle-fill"></i>
+                    <small >Valid 10 Digit Phone Number is required</small>
+                </div>
+             
+            </div>
+            <br>
+            <div class="signupcontents" id=submitbtn>
+                <button type = "submit"id="signupsubmit" (click)="submit=true">SUBMIT</button>
+            </div>
+            <br>
+            <br>
+        </form>
+    </div>
+    
+</section>
+<table>
+
+    <tr *ngFor="let i of sendDataToAdmin | keyvalue">
+
+        <td>{{i.value}}</td>
+        <!-- <td>{{i.model}}</td>
+        <td>{{i.service}}</td>
+        <td>{{i.location}}</td>
+        <td>{{i.date}}</td>
+        <td>{{i.time}}</td>
+        <td>{{i.phonenumber}}</td> -->
+
+
+    </tr>
+ 
+</table>
+<br><br><br>
