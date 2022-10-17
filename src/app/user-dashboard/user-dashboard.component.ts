@@ -44,14 +44,14 @@ export class UserDashboardComponent implements OnInit {
   }
   sendDataToAdmin:any;
   onUserSubmit(){
-    // this.sendDataToAdmin = this.UserSubmitData;
-    // const cookie_data = this.cookieService.get("data");
-    // if(!cookie_data){
-    //   this.cookieService.set( 'data', JSON.stringify(this.UserSubmitData));
-    // }else{
-    //   this.cookieService.set( 'data', cookie_data + "|" + JSON.stringify(this.UserSubmitData));
-    // }
-    // console.log(this.cookieService.get("data"));
+    this.sendDataToAdmin = this.UserSubmitData;
+    const cookie_data = this.cookieService.get("data");
+    if(!cookie_data){
+      this.cookieService.set( 'data', JSON.stringify(this.UserSubmitData));
+    }else{
+      this.cookieService.set( 'data', cookie_data + "|" + JSON.stringify(this.UserSubmitData));
+    }
+    console.log(this.cookieService.get("data"));
     Swal.fire(
       'Success!',
       'Booking done successfully',
