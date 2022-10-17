@@ -1,6 +1,35 @@
 <h1>Welcome <b style="color: red; text-transform: capitalize;">{{this.user}}</b>!</h1>
-<table>
-    <!-- <tr  *ngFor="let i of datasVisibile"> -->
-        <!-- <td>datasVisibile</td>
-    </tr> -->
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Car Model</th>
+            <th>Preferred Service</th>
+            <th>Preferred Location</th>
+            <th>Preferred Date</th>
+            <th>Preferred Time</th>
+            <th>Mobile Number</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody *ngFor="let i of bookingData">
+        <tr>
+            <td>{{i.name}}</td>
+            <td>{{i.model}}</td>
+            <td>{{i.service}}</td>
+            <td>{{i.location}}</td>
+            <td>{{i.date}}</td>
+            <td>{{i.time}}</td>
+            <td>{{i.phonenumber}}</td>
+            <!-- <td><button>Completed</button></td> -->
+            <td><select>
+                <option value="approve">Approve</option>
+                <option value="reject">Reject</option>
+            </select></td>
+        </tr>
+        <!-- <tr ng-repeat="e in i.details">
+           <td>{{$index}}</td>
+           <td>{{e.foo}}</td>
+           <td>{{e.bar}}</td></tr> -->
+      </tbody>
 </table>

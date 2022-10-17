@@ -4,7 +4,7 @@
     position: fixed;
     top: 38%;
     background-color: black;
-    width: 45px;
+    width: 60px;
     height: 15%;
     border-top-right-radius: 1rem;
     border-bottom-right-radius: 0.8rem;
@@ -12,6 +12,7 @@
 .navigation ul{
     list-style: none;
     margin-top: 5px;
+    padding: 0;
 }
 .navigation ul li{
 

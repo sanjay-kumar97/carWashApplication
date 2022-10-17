@@ -15,7 +15,7 @@ export class LoginpageComponent implements OnInit {
   LogInFormadmin = {Aemail:"",AId:"",Apassword:""};
   submit = false;
   AdminSubmit = false;
-  
+  UID!: string;
 
   ngOnInit(): void {
     // this.auth.AfterAccountCreateGoToDashboard();
@@ -33,7 +33,9 @@ export class LoginpageComponent implements OnInit {
     this.auth.loginUser(this.LogInFormsData.email,this.LogInFormsData.password).subscribe({
       next:data=>{
         this.auth.storeToken(data.idToken);
-        console.log(data.localId)
+        this.UID = data.localId.toString();
+        sessionStorage.setItem('UID', this.UID);
+        console.log(this.UID);
         console.log("LOGIN SUCCESSFUL!!");
 
         Swal.fire(
@@ -68,6 +70,9 @@ export class LoginpageComponent implements OnInit {
         this.auth.loginUser(this.LogInFormadmin.Aemail,this.LogInFormadmin.Apassword).subscribe({
           next:data=>{
             this.auth.storeToken(data.idToken);
+            this.UID = data.localId.toString();
+            sessionStorage.setItem('UID', this.UID);
+            console.log(this.UID);
             console.log("LOGIN SUCCESSFUL!!");
     
             Swal.fire(
@@ -92,8 +97,6 @@ export class LoginpageComponent implements OnInit {
       }else{
         alert("Unique ID is wrong")
   
-      }
-      
-      
+      }    
     }
 }

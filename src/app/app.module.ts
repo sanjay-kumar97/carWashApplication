@@ -11,6 +11,9 @@ import { LoginpageComponent } from './loginpage/loginpage.component';
 import { SignupPageComponent } from './sign-up-page/sign-up-page.component';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 import { NavbarComponent } from './navbar/navbar.component';
+// import { CookieConsentComponent } from './cookie/cookie-consent/cookie-consent.component';
+import { CookieService } from 'ngx-cookie-service/lib/cookie.service';
+import { ViewBookingComponent } from './view-booking/view-booking.component';
 
 
 const appRoute: Routes = [
@@ -37,7 +40,9 @@ const appRoute: Routes = [
     SignupPageComponent,
     UserDashboardComponent,
     AdminDashboardComponent,
-    NavbarComponent
+    NavbarComponent,
+    ViewBookingComponent
+    // CookieConsentComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +54,7 @@ const appRoute: Routes = [
 
 
   ],
-  providers: [],
+  providers: [CookieService, LoginpageComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,33 @@
+<h1>Your Bookings</h1>
+<table class="table table-bordered table-hover" style="border-color: black;">
+    <thead>
+        <tr>
+            <th class="text-dark ml-2">Name</th>
+            <th class="text-dark">Type of Service</th>
+            <th class="text-dark">Car Model</th>
+            <th class="text-dark">Service Location</th>
+            <th class="text-dark">Service Date</th>
+            <th class="text-dark">Service Time</th>
+            <th class="text-dark">Mobile Number</th>
+            <th class="text-dark">Status</th>
+        </tr>
+    </thead>
+    <tbody *ngFor="let i of bookingData">
+        <tr>
+            <td *ngIf="i.userId == UID">{{i.name}}</td>
+            <td *ngIf="i.userId == UID">{{i.service}}</td>
+            <td *ngIf="i.userId == UID">{{i.model}}</td>
+            <td *ngIf="i.userId == UID">{{i.location}}</td>
+            <td *ngIf="i.userId == UID">{{i.date}}</td>
+            <td *ngIf="i.userId == UID">{{i.time}}</td>
+            <td *ngIf="i.userId == UID">{{i.phonenumber}}</td>
+            <td *ngIf="i.userId == UID">Pending</td>
+            <!-- <td>{{UID}}</td> -->
+            <!-- <td><button>Completed</button></td> -->
+            <!-- <td><select>
+                <option value="approve">Approve</option>
+                <option value="reject">Reject</option>
+            </select></td> -->
+        </tr>
+    </tbody>
+</table>
